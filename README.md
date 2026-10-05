@@ -15,9 +15,9 @@ SpeedFast es una aplicación de escritorio desarrollada en Java que permite gest
 - Editar pedidos.
 - Eliminar pedidos.
 - Manejar estados:
-    - PENDIENTE
-    - EN_REPARTO
-    - ENTREGADO
+  - PENDIENTE
+  - EN_REPARTO
+  - ENTREGADO
 
 ### Gestión de Repartidores
 
@@ -72,3 +72,36 @@ cl.speedfast
     ├── VentanaGestionRepartidores
     ├── VentanaGestionEntregas
     └── VentanaAsignarRepartidor
+```
+
+## Base de datos
+
+La aplicación utiliza la base de datos:
+
+```text
+speedfast_db
+```
+
+con las tablas:
+
+- pedido
+- repartidor
+- entrega
+
+## Conexión a MySQL
+
+Al iniciar la aplicación se solicita la contraseña del usuario `root` de MySQL.
+
+La contraseña no se almacena directamente en el código fuente.
+
+## Ejecución
+
+La aplicación se inicia desde:
+
+```text
+cl.speedfast.main.Main
+```
+
+## Autor
+
+Byron Aguilar
