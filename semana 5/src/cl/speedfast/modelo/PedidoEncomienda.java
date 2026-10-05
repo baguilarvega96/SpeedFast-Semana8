@@ -1,21 +1,21 @@
-package cl.speedfast;
+package cl.speedfast.modelo;
 
-public class PedidoComida extends Pedido {
+public class PedidoEncomienda extends Pedido {
 
-    private boolean requiereMochilaTermica = true;
+    private double pesoKg = 3.5;
 
-    public PedidoComida(String idPedido, String direccionEntrega, double distanciaKm) {
-        super(idPedido, direccionEntrega, "Comida", distanciaKm);
+    public PedidoEncomienda(String idPedido, String direccionEntrega, double distanciaKm) {
+        super(idPedido, direccionEntrega, "Encomienda", distanciaKm);
     }
 
     @Override
     public void asignarRepartidor() {
-        repartidorAsignado = "Luis Díaz";
+        repartidorAsignado = "Daniela Tapia";
 
-        System.out.println("[Pedido Comida]");
+        System.out.println("[Pedido Encomienda]");
         System.out.println("Asignando repartidor...");
-        System.out.println("→ Verificando mochila térmica... "
-                + (requiereMochilaTermica ? "OK" : "No requerida"));
+        System.out.println("→ Validando peso y embalaje... OK");
+        System.out.println("→ Peso registrado: " + pesoKg + " kg");
         System.out.println("→ Pedido asignado a " + repartidorAsignado);
 
         registrarEvento("Repartidor asignado automáticamente: " + repartidorAsignado);
@@ -25,7 +25,7 @@ public class PedidoComida extends Pedido {
     public void asignarRepartidor(String nombreRepartidor) {
         repartidorAsignado = nombreRepartidor;
 
-        System.out.println("→ Verificando mochila térmica... OK");
+        System.out.println("→ Validando peso y embalaje... OK");
         System.out.println("→ Pedido asignado a " + nombreRepartidor);
 
         registrarEvento("Repartidor asignado manualmente: " + nombreRepartidor);
@@ -33,6 +33,6 @@ public class PedidoComida extends Pedido {
 
     @Override
     public int calcularTiempoEntrega() {
-        return (int) (15 + (2 * getDistanciaKm()));
+        return (int) (20 + (1.5 * getDistanciaKm()));
     }
 }

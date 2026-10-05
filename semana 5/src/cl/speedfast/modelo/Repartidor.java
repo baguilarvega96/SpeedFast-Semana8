@@ -1,4 +1,4 @@
-package cl.speedfast;
+package cl.speedfast.modelo;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,6 +10,10 @@ public class Repartidor implements Runnable {
     public Repartidor(String nombre, ZonaDeCarga zonaDeCarga) {
         this.nombre = nombre;
         this.zonaDeCarga = zonaDeCarga;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     @Override

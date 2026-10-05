@@ -1,53 +1,71 @@
-# SpeedFast - Semana 5
+# SpeedFast - Semana 8
 
-## Desarrollo Orientado a Objetos II
-
-Actividad correspondiente a la Semana 5 de la asignatura Desarrollo Orientado a Objetos II.
-
-### Autor
-Byron Aguilar Vega
-
----
+Proyecto desarrollado para la asignatura Desarrollo Orientado a Objetos II.
 
 ## Descripción
 
-En esta actividad se continúa el desarrollo del sistema SpeedFast.
+SpeedFast es una aplicación de escritorio desarrollada en Java que permite gestionar pedidos, repartidores y entregas utilizando una interfaz gráfica Swing y una base de datos MySQL conectada mediante JDBC.
 
-El objetivo es simular un sistema de entregas concurrentes donde varios repartidores trabajan en paralelo retirando pedidos desde una zona de carga compartida.
+## Funcionalidades
 
-Para evitar que dos repartidores retiren el mismo pedido al mismo tiempo, se implementan mecanismos de sincronización mediante `synchronized`.
+### Gestión de Pedidos
+- Registrar pedidos.
+- Listar pedidos.
+- Editar pedidos.
+- Eliminar pedidos.
+- Manejar estados:
+    - PENDIENTE
+    - EN_REPARTO
+    - ENTREGADO
 
----
+### Gestión de Repartidores
+- Registrar repartidores.
+- Listar repartidores.
+- Editar repartidores.
+- Eliminar repartidores.
 
-## Objetivos de la actividad
+### Gestión de Entregas
+- Registrar entregas.
+- Asociar un pedido con un repartidor.
+- Listar entregas.
+- Editar entregas.
+- Eliminar entregas.
 
-- Implementar múltiples hilos mediante `Runnable`.
-- Ejecutar varios repartidores de forma concurrente.
-- Proteger el acceso a recursos compartidos.
-- Evitar condiciones de carrera.
-- Utilizar sincronización mediante `synchronized`.
-- Gestionar estados de los pedidos mediante `enum`.
-- Simular tiempos de entrega mediante `Thread.sleep()`.
-- Utilizar `ExecutorService` para administrar los hilos.
+## Tecnologías utilizadas
 
----
+- Java
+- Java Swing
+- MySQL
+- JDBC
+- IntelliJ IDEA
+- Git
+- GitHub
 
-## Estructura principal del proyecto
+## Estructura del proyecto
 
 ```text
-semana 5
-└── src
-    └── cl.speedfast
-        ├── interfaces
-        │   ├── Cancelable.java
-        │   ├── Despachable.java
-        │   └── Rastreable.java
-        │
-        ├── EstadoPedido.java
-        ├── Main.java
-        ├── Pedido.java
-        ├── PedidoComida.java
-        ├── PedidoEncomienda.java
-        ├── PedidoExpress.java
-        ├── Repartidor.java
-        └── ZonaDeCarga.java
+cl.speedfast
+├── dao
+│   ├── ConexionDB
+│   ├── PedidoDAO
+│   ├── RepartidorDAO
+│   └── EntregaDAO
+├── interfaces
+├── main
+│   └── Main
+├── modelo
+│   ├── EstadoPedido
+│   ├── Pedido
+│   ├── PedidoComida
+│   ├── PedidoEncomienda
+│   ├── PedidoExpress
+│   ├── Repartidor
+│   └── ZonaDeCarga
+└── vista
+    ├── DatosCompartidos
+    ├── VentanaPrincipal
+    ├── VentanaRegistroPedido
+    ├── VentanaListaPedidos
+    ├── VentanaGestionRepartidores
+    ├── VentanaGestionEntregas
+    └── VentanaAsignarRepartidor
